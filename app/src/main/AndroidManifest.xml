@@ -16,9 +16,11 @@
         android:usesCleartextTraffic="${usesCleartextTraffic}"
         tools:targetApi="m">
         <activity
+            android:name=".ui.paging.PagingActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.main.MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

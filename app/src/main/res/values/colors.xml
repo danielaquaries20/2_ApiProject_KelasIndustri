@@ -14,4 +14,11 @@
     <color name="colorOldGrey">#3D393E</color>
     <color name="colorGrey">#EBE1ED</color>
     <color name="colorBlue">#482C8A</color>
+
+    <color name="colorBlue2">#370665</color>
+    <color name="colorLightBlue">#35589A</color>
+    <color name="colorOrange2">#F14A16</color>
+    <color name="colorLightOrange">#FC9918</color>
+
+
 </resources>

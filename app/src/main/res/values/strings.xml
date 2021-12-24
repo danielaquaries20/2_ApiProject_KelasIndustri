@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">2 ApiProject_KelasIndustri</string>
+    <string name="welcome_home">Welcome Home</string>
+    <string name="paging">Paging</string>
 </resources>
