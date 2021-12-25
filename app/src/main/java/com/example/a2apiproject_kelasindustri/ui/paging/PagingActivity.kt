@@ -4,12 +4,15 @@ import android.os.Bundle
 import com.crocodic.core.base.adapter.CoreListAdapter
 import com.crocodic.core.base.adapter.CoreListAdapter.Companion.get
 import com.crocodic.core.extension.initLoadMore
+import com.crocodic.core.extension.openActivity
 import com.crocodic.core.helper.list.EndlessScrollListener
 import com.example.a2apiproject_kelasindustri.R
 import com.example.a2apiproject_kelasindustri.base.activity.BaseActivity
+import com.example.a2apiproject_kelasindustri.data.constant.Const
 import com.example.a2apiproject_kelasindustri.data.model.Article
 import com.example.a2apiproject_kelasindustri.databinding.ActivityPagingBinding
 import com.example.a2apiproject_kelasindustri.databinding.ItemArticleBinding
+import com.example.a2apiproject_kelasindustri.ui.detail.DetailArticleActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,7 +39,12 @@ class PagingActivity : BaseActivity<ActivityPagingBinding, PagingViewModel>() {
         binding.rvArticle.adapter =
             CoreListAdapter<ItemArticleBinding, Article>(R.layout.item_article).initItem(
                 articlesList
-            )
+            ) { position, data ->
+                openActivity<DetailArticleActivity> {
+                    putExtra(Const.BUNDLE.ARTICLE, data)
+                }
+            }
+
 
         scrollListener = binding.rvArticle.initLoadMore { page ->
             getData(page + 1)

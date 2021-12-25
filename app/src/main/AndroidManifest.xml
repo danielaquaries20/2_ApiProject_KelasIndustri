@@ -15,6 +15,7 @@
         android:theme="@style/Theme.2ApiProject_KelasIndustri"
         android:usesCleartextTraffic="${usesCleartextTraffic}"
         tools:targetApi="m">
+        <activity android:name=".ui.detail.DetailArticleActivity"></activity>
         <activity
             android:name=".ui.paging.PagingActivity"
             android:exported="true" />

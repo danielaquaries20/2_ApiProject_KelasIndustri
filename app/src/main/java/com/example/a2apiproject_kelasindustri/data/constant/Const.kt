@@ -9,4 +9,8 @@ class Const {
         const val PHONE = "phone"
         const val PASSWORD = "password"
     }
+
+    object BUNDLE {
+        const val ARTICLE = "article"
+    }
 }

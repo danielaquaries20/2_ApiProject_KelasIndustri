@@ -1,8 +1,11 @@
 package com.example.a2apiproject_kelasindustri.data.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Article(
 
     @Expose
@@ -19,6 +22,10 @@ data class Article(
 
     @Expose
     @SerializedName("content")
-    val content: String?
+    val content: String?,
 
-)
+    @Expose
+    @SerializedName("image")
+    val image: String?
+
+) : Parcelable
