@@ -26,6 +26,10 @@ data class Article(
 
     @Expose
     @SerializedName("image")
-    val image: String?
+    val image: String?,
+
+    @Expose
+    @SerializedName("resize_image")
+    val resizeImage: String?
 
 ) : Parcelable

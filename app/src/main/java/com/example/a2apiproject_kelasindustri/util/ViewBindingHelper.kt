@@ -8,12 +8,20 @@ import com.bumptech.glide.request.RequestOptions
 class ViewBindingHelper {
     companion object {
         @JvmStatic
-        @BindingAdapter("imageUrl")
-        fun loadImage(view: ImageView, imageUrl: String?) {
+        @BindingAdapter(value = ["imageUrl", "imageThumbnail"], requireAll = false)
+        fun loadImage(view: ImageView, imageUrl: String?, imageThumbnail: String?) {
             imageUrl?.let {
+
+                val thumbnail = Glide
+                    .with(view.context)
+                    .load(imageThumbnail)
+                    .apply(RequestOptions.centerCropTransform())
+
+
                 Glide
                     .with(view.context)
                     .load(imageUrl)
+                    .thumbnail(thumbnail)
                     .apply(RequestOptions.centerCropTransform())
                     .into(view)
             }

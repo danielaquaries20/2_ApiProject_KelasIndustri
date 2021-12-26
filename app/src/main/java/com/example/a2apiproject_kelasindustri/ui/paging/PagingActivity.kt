@@ -6,6 +6,8 @@ import com.crocodic.core.base.adapter.CoreListAdapter.Companion.get
 import com.crocodic.core.extension.initLoadMore
 import com.crocodic.core.extension.openActivity
 import com.crocodic.core.helper.list.EndlessScrollListener
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.example.a2apiproject_kelasindustri.R
 import com.example.a2apiproject_kelasindustri.base.activity.BaseActivity
 import com.example.a2apiproject_kelasindustri.data.constant.Const
@@ -52,6 +54,15 @@ class PagingActivity : BaseActivity<ActivityPagingBinding, PagingViewModel>() {
         }
     }
 
+    private fun initSlider(data: List<Article?>) {
+        val imageList = ArrayList<SlideModel>()
+        data.forEach {
+            imageList.add(SlideModel(it?.image))
+        }
+
+        binding.ivSlider.setImageList(imageList, ScaleTypes.CENTER_CROP)
+    }
+
 
     private fun observe() {
         viewModel.articles.observe(this, {
@@ -61,6 +72,8 @@ class PagingActivity : BaseActivity<ActivityPagingBinding, PagingViewModel>() {
                 articlesList.clear()
                 binding.rvArticle.adapter?.notifyDataSetChanged()
                 scrollListener?.resetState()
+
+                initSlider(it.datas)
             }
 
             if (it.datas.isNotEmpty()) {
@@ -76,5 +89,6 @@ class PagingActivity : BaseActivity<ActivityPagingBinding, PagingViewModel>() {
             }
         })
     }
+
 
 }

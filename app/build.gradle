@@ -77,7 +77,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //Kapt
-    kapt 'com.github.bumptech.glide:glide:4.12.0'
+//    kapt 'com.github.bumptech.glide:glide:4.12.0'
 
     //With Hilt
     implementation 'com.google.dagger:hilt-android:2.38.1'
@@ -112,6 +112,9 @@ dependencies {
     //Lifecycle
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     kapt 'androidx.lifecycle:lifecycle-compiler:2.4.0-rc01'
+
+    //Image Slider
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
 
 }
 apply plugin: 'com.google.gms.google-services'
