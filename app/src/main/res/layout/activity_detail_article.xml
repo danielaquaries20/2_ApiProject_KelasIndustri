@@ -29,8 +29,9 @@
                     android:id="@+id/ivArticle"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:imageUrl='@{data.image}'
+                    android:src="@drawable/placeholder"
                     app:imageThumbnail='@{data.resizeImage}'
+                    app:imageUrl='@{data.image}'
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="16:9"
                     app:layout_constraintEnd_toEndOf="parent"
